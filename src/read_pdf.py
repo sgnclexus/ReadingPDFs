@@ -8,10 +8,11 @@
 # text = [t.text for t in text_elements]
 
 # print(text)
+
 import pandas as pd
 import tabula
 
-tables = tabula.read_pdf('LIST_CAJ_200955.pdf', pages='all', multiple_tables=True)
+tables = tabula.read_pdf('q400.pdf', pages='all', multiple_tables=True)
 print('Tipo de dato: ',type(tables))
 print('Longitud de tables: ',len(tables))
 # df = tables[1]
@@ -24,5 +25,5 @@ for table in tables:
 
 
 df = pd.concat(tables)
-df.to_csv('Tabla_Cajas_comipems.csv', encoding='utf-8')
+df.to_csv('VOO.csv', encoding='utf-8')
 print(df)
